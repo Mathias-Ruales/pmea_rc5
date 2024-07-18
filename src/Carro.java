@@ -56,7 +56,7 @@ public class Carro {
 
     boolean descuentoProntoPago() {
         int opcionDescuento = JOptionPane.showConfirmDialog(null,
-                "El carro aplica para pronto pago I dont know?",
+                "El carro aplica para pronto pago ?",
                 "Seleccione una opción",
                 JOptionPane.YES_NO_OPTION);
         return opcionDescuento == JOptionPane.YES_OPTION;
