@@ -95,20 +95,21 @@ public class Carro {
     public String calcularDescuento(Carro carro) {
         double precioOriginal = carro.getPrecio();
         double precioConDescuento = precioOriginal;
+        double precioFinal;
 
         StringBuilder descuentosAplicados = new StringBuilder();
         int dias = descuentoProntoPago();
         switch (dias){
             case 0:
-                precioConDescuento *= 0.95;
+                precioConDescuento *= 0.05;
                 descuentosAplicados.append("Pronto Pago 30 días (5%)\n");
                 break;
             case 1:
-                precioConDescuento *= 0.85;
+                precioConDescuento *= 0.10;
                 descuentosAplicados.append("Pronto Pago el mismo día (15%)\n");
                 break;
             case 2:
-                precioConDescuento *= 0.85;
+                precioConDescuento *= 0.15;
                 descuentosAplicados.append("Pronto Pago el mismo día (15%)\n");
                 break;
         }
@@ -131,10 +132,11 @@ public class Carro {
                 descuentosAplicados.append("Traslado de Cuenta (10%)\n");
             }
         }
-
+        precioFinal = precioOriginal + precioConDescuento;
         carro.setPrecioDescuento(precioConDescuento);
         return "Precio original: $" + precioOriginal + "\n" +
                 "Descuentos aplicados:\n" + descuentosAplicados +
-                "Precio con descuentos: $" + precioConDescuento + "\n";
+                "Impuestos: $" + precioConDescuento + "\n" +
+                "Precio final: $" + (precioFinal + "\n");
     }
 }
