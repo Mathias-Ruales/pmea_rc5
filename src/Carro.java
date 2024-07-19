@@ -106,7 +106,7 @@ public class Carro {
                 break;
             case 1:
                 precioConDescuento *= 0.10;
-                descuentosAplicados.append("Pronto Pago el mismo día (15%)\n");
+                descuentosAplicados.append("Pronto Pago 15 dias (15%)\n");
                 break;
             case 2:
                 precioConDescuento *= 0.15;
